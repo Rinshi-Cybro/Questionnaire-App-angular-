@@ -1,0 +1,101 @@
+
+<div class="container mt-5">
+    <div class="registration-form m-3 p-4">
+      <div class="row">
+        <form [formGroup]="quizForm">
+            <h2 class=" text-color-black text-center">Welcome to Questionnaire</h2><br>
+          <div class="col-md-6"><br><b>Select the User</b><br>
+            <select class="form-select fw-semibold" formControlName ="user">
+              <option class="fw-semibold" *ngFor="let user of users">{{user}}</option>
+            </select>
+            <button type="button" class="btn btn-success mt-3 cd" [disabled]="!quizForm.get('user')?.value"
+              (click)="q1start();" *ngIf="!nextButtonClicked">Next</button>
+          </div>
+          
+          <div class="col-md-8 mt-4 a" *ngIf="q1show">
+            <h4>1. Which of these elements in HTML can be used for making a text bold?</h4><br>
+            <div class="fw-semibold ms-3" *ngFor="let qn1 of qstn1">
+              <input class="form-check-input" type="radio" required name="flexRadioDefault" name="opt1" [value]="qn1"
+                formControlName="opt1" id="{{qn1}}">
+              <label class="form-check-label ms-3" for="{{qn1}}">{{qn1}}</label><br><br>
+            </div>
+            <small><i>
+                <p id="small">Question 1 of 5</p>
+            </i></small>
+            <button type="button" class="btn btn-success btn-lg" [disabled]="!quizForm.get('opt1')?.value "
+              (click)="q2start()">Next Question</button>
+          </div>
+
+
+          <div class="col-md-8 mt-4" *ngIf="q2show">
+            <h4>2. Which tag do we use in HTML for inserting a line-break?</h4><br>
+            <div class="fw-semibold" *ngFor="let qn2 of qstn2">
+              <input class="form-check-input" type="radio" required name="flexRadioDefault" [value]="qn2" name="opt2"
+                formControlName="opt2" id="{{qn2}}">
+              <label class="form-check-label ms-3" for="{{qn2}}">{{qn2}}</label><br><br>
+            </div>
+            <small><i>
+                <p id="small">Question 2 of 5</p>
+              </i></small>
+            <button type="button" class="btn btn-success btn-lg" (click)="q2start()">Previous Question</button>
+            <span class="examplespace"></span>
+            <button type="button" class="btn btn-success btn-lg" [disabled]="!quizForm.get('opt2')?.value"
+              (click)="q3start()">Next Question</button>
+          </div>
+
+
+          <div class="col-md-8 mt-4" *ngIf="q3show">
+            <h4>3. How to create a hyperlink in HTML?</h4><br>
+            <div class="fw-semibold" *ngFor="let qn3 of qstn3">
+              <input class="form-check-input" type="radio" required name="flexRadioDefault" [value]="qn3" name="opt3"
+                formControlName="opt3" id="{{qn3}}">
+              <label class="form-check-label ms-3" for="{{qn3}}">{{qn3}}</label><br><br>
+            </div>
+            <small><i>
+                <p id="small">Question 3 of 5</p>
+            </i></small>
+            <button type="button" class="btn btn-success btn-lg" (click)="q3start()">Previous Question</button>
+            <span class="examplespace"></span>
+            <button type="button" class="btn btn-success btn-lg" [disabled]="!quizForm.get('opt3')?.value "
+              (click)="q4start()">Next Question</button>
+          </div>
+
+
+          <div class="col-md-8 mt-4" *ngIf="q4show">
+            <h4>4. In HTML, how do we insert an image?</h4><br>
+            <div class="fw-semibold g-3" *ngFor="let qn4 of qstn4">
+              <input class="form-check-input" type="radio" required name="flexRadioDefault" [value]="qn4" name="opt4"
+                formControlName="opt4" id="{{qn4}}">
+              <label class="form-check-label ms-3" for="{{qn4}}">{{qn4}}</label><br><br>
+            </div>
+            <small><i>
+                <p id="small">Question 4 of 5</p>
+              </i></small>
+            <button type="button" class="btn btn-success btn-lg" (click)="q4start()">Previous Question</button>
+            <span class="examplespace"></span>
+            <button type="button" class="btn btn-success btn-lg" [disabled]="!quizForm.get('opt4')?.value "
+              (click)="q5start()">Next Question</button>
+          </div>
+
+
+          <div class="col-md-10 mt-4" *ngIf="q5show">
+            <h4>5. Which tag do we use to define the options present in the drop-down selection lists?</h4><br>
+            <div class="fw-semibold" *ngFor="let qn5 of qstn5">
+              <input class="form-check-input" type="radio" required name="flexRadioDefault" [value]="qn5" name="opt5"
+                formControlName="opt5" id="{{qn5}}">
+              <label class="form-check-label ms-3" for="{{qn5}}">{{qn5}}</label><br><br>
+            </div>
+            <small><i><p id="small">Question 5 of 5</p></i></small>
+            <button type="button" class="btn btn-success btn-lg" (click)="q5start()">Previous Question</button>
+            <span class="examplespace"></span>
+            <div class="col-md-10 mt-4" *ngIf="q5show">
+                <h4>Submitted Results:</h4>
+                <h6>Subtotal: {{ subtotal }} out of 50</h6>
+                <button type="button" class="btn btn-success btn-lg" [disabled]="!quizForm.valid" (click)="onSubmit()">Submit</button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+</div>

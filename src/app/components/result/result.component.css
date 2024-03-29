@@ -1,0 +1,26 @@
+.container {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.container .card {
+    background-color:rgb(193, 194, 195);
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    margin-top: 3%;
+}
+
+.wrong{
+    color: red;
+}
+
+.right{
+    color:green
+}
+
+
+#small{
+    font-size: 12px;
+}

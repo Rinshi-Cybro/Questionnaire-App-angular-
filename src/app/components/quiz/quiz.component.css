@@ -1,0 +1,15 @@
+.examplespace {
+    margin: 10px;
+}
+
+.container {
+    border: 1.7px solid rgb(66, 65, 65);
+    box-shadow: 6px 6px rgb(168, 164, 164);
+    /* background-color: rgb(206, 232, 247); */
+    background-color: rgb(234, 230, 230);
+    margin-bottom: 25px;
+}
+
+#small {
+    font-size: 16px;
+}

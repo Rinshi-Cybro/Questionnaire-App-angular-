@@ -1,0 +1,54 @@
+
+<div class="container mt-5">
+    <div class="card">
+        <h3 class="bg-secondary text-light text-center"> Quiz Results </h3>
+        <table class="table table-bordered table">
+            <thead>
+                <tr class="col-md-6 fs-5">
+                    <th>User</th>
+                    <th>Question 1</th>
+                    <th>Question 2</th>
+                    <th>Question 3</th>
+                    <th>Question 4</th>
+                    <th>Question 5</th>
+                    <!-- <th>Result</th> -->
+                </tr>
+            </thead>
+            <tbody>
+                <th>Correct answer</th>
+                    <th>d. &lt;b&gt;</th>
+                    <th>b. &lt;br&gt;</th>
+                    <th>c. &lt;a href= www.thinkandlearn.com> thinkandlearn.com &lt;/a&gt;</th>
+                    <th>a. &lt;img src = “jtp.png”/&gt;</th>
+                    <th>b. &lt;option&gt; </th>
+                    <!-- <th> Out of 50</th>  -->
+                <tr *ngFor="let ans of quizData">
+                    <td class="fw-bold">{{ans.user}}</td>
+
+                    <td class="text-center">
+                        <span class="badge bg-success" style="font-size: 15px;" *ngIf="ans.opt1 == correctAns1"> Right </span>
+                        <span class="badge bg-danger" style="font-size: 15px;" *ngIf="ans.opt1 != correctAns1"> Wrong </span>
+                    </td>
+                    <td class="text-center">
+                        <span class="badge bg-success" style="font-size: 15px;" *ngIf="ans.opt2 == correctAns2"> Right </span>
+                        <span class="badge bg-danger" style="font-size: 15px;" *ngIf="ans.opt2 != correctAns2"> Wrong </span>
+                    </td>
+                    <td class="text-center">
+                        <span class="badge bg-success" style="font-size: 15px;" *ngIf="ans.opt3 == correctAns3"> Right </span>
+                        <span class="badge bg-danger" style="font-size: 15px;" *ngIf="ans.opt3 != correctAns3"> Wrong </span>
+                    </td>
+                    <td class="text-center">
+                        <span class="badge bg-success" style="font-size: 15px;" *ngIf="ans.opt4 == correctAns4"> Right </span>
+                        <span class="badge bg-danger" style="font-size: 15px;" *ngIf="ans.opt4 != correctAns4"> Wrong </span>
+                    </td>
+                    <td class="text-center">
+                        <span class="badge bg-success" style="font-size: 15px;" *ngIf="ans.opt5 == correctAns5"> Right </span>
+                        <span class="badge bg-danger" style="font-size: 15px;" *ngIf="ans.opt5 != correctAns5"> Wrong </span>
+                    </td>
+                    <!-- <td>{{total}}</td> -->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
